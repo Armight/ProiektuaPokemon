@@ -1,14 +1,18 @@
 package proiektuPokemonAbiapuntu;
 
+import java.util.ArrayList;
+
 public class PokemonSua extends Pokemon{
 	public PokemonSua(String pIzena, int pBizitza,int pErasoa,int pDefentsa) {
 		super(pIzena,pBizitza,pErasoa,pDefentsa);
+		this.setEkintzak();
 		
 	}
 	
 	@Override
 	
 	public void setEkintzak() {
+		ArrayList<Ekintza> ekintzak = getEkintzak();
 		ekintzak.add(new Ekintza("Sugarrada",50,"Sua"));
 		ekintzak.add(new Ekintza("Su-ukabilkada",25,"Sua"));
 		ekintzak.add(new Ekintza("Bero-kolpea",30,"Sua"));
@@ -16,7 +20,7 @@ public class PokemonSua extends Pokemon{
 		
 	}
 	@Override
-	public double kalkulatuKaltea(Ekintza pEkintza, Pokemon etsaia) {
+	protected double kalkulatuKaltea(Ekintza pEkintza, Pokemon etsaia) {
 		double kaltea = super.kalkulatuKaltea(pEkintza, etsaia);
 	
 		if (etsaia instanceof PokemonBelar) {
