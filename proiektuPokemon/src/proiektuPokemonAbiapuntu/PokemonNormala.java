@@ -1,18 +1,19 @@
 package proiektuPokemonAbiapuntu;
-//PokemonNormala klasea (Pokemon Normal - Pokemon normala)
-public class PokemonNormala extends Pokemon {
- 
- public PokemonNormala(String izena, int bizitza, int erasoa, int defentsa) {
-     super(izena, bizitza, erasoa, defentsa);
- }
 
- @Override
- public void setEkintzak() {
-     ekintzak.add(new Ekintza("Gorputzada", 70, "Normala"));
-     ekintzak.add(new Ekintza("Oldartu", 50, "Normala"));
-     ekintzak.add(new Ekintza("Eraso Bizkorra", 40, "Normala"));
-     ekintzak.add(new Ekintza("Kolpe Bikoitza", 60, "Normala"));
- }
- 
- // Pokemon normalak ez du abantaila edo desabantaila tiporik
+public class PokemonNormala extends Pokemon{
+	public PokemonNormala(String pIzena, int pBizitza,int pErasoa,int pDefentsa) {
+		super(pIzena,pBizitza,pErasoa,pDefentsa);
+		
+	}
+	
+	@Override
+	
+	public void setEkintzak() {
+		ekintzak.add(new Ekintza("Gorputzada",30,"Normala"));
+		ekintzak.add(new Ekintza("Eraso-Bizkorra",40,"Normala"));
+		ekintzak.add(new Ekintza("Oldartu",20,"Normala"));
+		ekintzak.add(new Ekintza("Kolpe-Bikoitza",70,"Normala"));
+		
+	}
+
 }

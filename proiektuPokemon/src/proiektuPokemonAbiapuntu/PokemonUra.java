@@ -1,32 +1,35 @@
 package proiektuPokemonAbiapuntu;
-//PokemonUra klasea (Pokemon Agua - Ur pokemona)
-public class PokemonUra extends Pokemon {
- 
- public PokemonUra(String izena, int bizitza, int erasoa, int defentsa) {
-     super(izena, bizitza, erasoa, defentsa);
- }
 
- @Override
- public void setEkintzak() {
-     ekintzak.add(new Ekintza("Hidrobonba", 85, "Ura"));
-     ekintzak.add(new Ekintza("Ur Pistola", 40, "Ura"));
-     ekintzak.add(new Ekintza("Olatuak", 70, "Ura"));
-     ekintzak.add(new Ekintza("Burbuila Izpia", 60, "Ura"));
- }
- 
- @Override
- public double kalkulatuKaltea(Ekintza ekintza, Pokemon etsaia) {
-     double kaltea = super.kalkulatuKaltea(ekintza, etsaia);
-     
-     // Tipo abantailak
-     if (etsaia instanceof PokemonSua) {
-         kaltea *= 1.5; // Efektiboa suaren aurka
-         System.out.println("Oso eraginkorra da!");
-     } else if (etsaia instanceof PokemonBelar) {
-         kaltea *= 0.5; // Ez oso efektiboa belarraren aurka
-         System.out.println("Ez da oso eraginkorra...");
-     }
-     
-     return kaltea;
- }
+public class PokemonUra extends Pokemon{
+	public PokemonUra(String pIzena, int pBizitza,int pErasoa,int pDefentsa) {
+		super(pIzena,pBizitza,pErasoa,pDefentsa);
+		
+	}
+	
+	@Override
+	
+	public void setEkintzak() {
+		ekintzak.add(new Ekintza("Surf",30,"Ura"));
+		ekintzak.add(new Ekintza("Aqua-Jet",40,"Ura"));
+		ekintzak.add(new Ekintza("Ur-pistola",20,"Ura"));
+		ekintzak.add(new Ekintza("Hidrobomba",50,"Ura"));
+		
+	}
+	@Override
+	public double kalkulatuKaltea(Ekintza pEkintza, Pokemon etsaia) {
+		double kaltea = super.kalkulatuKaltea(pEkintza, etsaia);
+	
+		if (etsaia instanceof PokemonSua) {
+			kaltea = kaltea * 1.5;
+			System.out.println("Eraginkorra da!");
+		}
+		else if (etsaia instanceof PokemonBelar) {
+			kaltea= kaltea * 0.5;
+			System.out.println("Ez da hain eraginkorra...");
+		}
+		
+		return kaltea;
+	
+}
+
 }

@@ -1,32 +1,35 @@
 package proiektuPokemonAbiapuntu;
-//PokemonBelar klasea (Pokemon Hierba - Belar pokemona)
-public class PokemonBelar extends Pokemon {
- 
- public PokemonBelar(String izena, int bizitza, int erasoa, int defentsa) {
-     super(izena, bizitza, erasoa, defentsa);
- }
 
- @Override
- public void setEkintzak() {
-     ekintzak.add(new Ekintza("Hostokada", 80, "Belar"));
-     ekintzak.add(new Ekintza("Loratze", 50, "Belar"));
-     ekintzak.add(new Ekintza("Eguzki Izpia", 75, "Belar"));
-     ekintzak.add(new Ekintza("Xurgapena", 60, "Belar"));
- }
- 
- @Override
- public double kalkulatuKaltea(Ekintza ekintza, Pokemon etsaia) {
-     double kaltea = super.kalkulatuKaltea(ekintza, etsaia);
-     
-     // Tipo abantailak
-     if (etsaia instanceof PokemonUra) {
-         kaltea *= 1.5; // Efektiboa uraren aurka
-         System.out.println("Oso eraginkorra da!");
-     } else if (etsaia instanceof PokemonSua) {
-         kaltea *= 0.5; // Ez oso efektiboa suaren aurka
-         System.out.println("Ez da oso eraginkorra...");
-     }
-     
-     return kaltea;
- }
+public class PokemonBelar extends Pokemon{
+	public PokemonBelar(String pIzena, int pBizitza,int pErasoa,int pDefentsa) {
+		super(pIzena,pBizitza,pErasoa,pDefentsa);
+		
+	}
+	
+	@Override
+	
+	public void setEkintzak() {
+		ekintzak.add(new Ekintza("Hostokada",30,"Belar"));
+		ekintzak.add(new Ekintza("Loratze",25,"Belar"));
+		ekintzak.add(new Ekintza("Eguzki Izpia",50,"Belar"));
+		ekintzak.add(new Ekintza("Xurgapena",40,"Belar"));
+		
+	}
+	@Override
+	public double kalkulatuKaltea(Ekintza pEkintza, Pokemon etsaia) {
+		double kaltea = super.kalkulatuKaltea(pEkintza, etsaia);
+	
+		if (etsaia instanceof PokemonUra) {
+			kaltea = kaltea * 1.5;
+			System.out.println("Eraginkorra da!");
+		}
+		else if (etsaia instanceof PokemonSua) {
+			kaltea= kaltea * 0.5;
+			System.out.println("Ez da hain eraginkorra...");
+		}
+		
+		return kaltea;
+	
+}
+
 }

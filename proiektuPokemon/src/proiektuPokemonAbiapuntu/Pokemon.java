@@ -1,64 +1,65 @@
 package proiektuPokemonAbiapuntu;
 import java.util.ArrayList;
-import java.util.List;
 
 // Pokemon klase abstraktua
 public abstract class Pokemon {
-    protected String izena;
+	protected String izena;
     protected int bizitza;
     protected int erasoa;
     protected int defentsa;
-    protected List<Ekintza> ekintzak;
+    protected ArrayList<Ekintza> ekintzak;
 
-    public Pokemon(String izena, int bizitza, int erasoa, int defentsa) {
-        this.izena = izena;
-        this.bizitza = bizitza;
-        this.erasoa = erasoa;
-        this.defentsa = defentsa;
-        this.ekintzak = new ArrayList<>();
-        setEkintzak();
+    public Pokemon(String pIzena, int pBizitza, int pErasoa, int pDefentsa) {
+        this.izena = pIzena;
+        this.bizitza = pBizitza;
+        this.erasoa = pErasoa;
+        this.defentsa = pDefentsa;
+        this.ekintzak = new ArrayList<Ekintza>();
+        this.setEkintzak(); //IMPORTANTE CAMBIO
     }
 
     public abstract void setEkintzak();
 
     public void erasotu(Pokemon etsaia, Ekintza ekintza) {
-        System.out.println(izena + " erabiltzen ari da " + ekintza.getIzena() + " " + etsaia.izena + "ren aurka.");
+        System.out.println(this.izena + " erabiltzen ari da " + ekintza.getIzena() + " " + etsaia.izena + "ren aurka.");
         etsaia.jasoErasoa(kalkulatuKaltea(ekintza, etsaia));
     }
 
     public double kalkulatuKaltea(Ekintza ekintza, Pokemon etsaia) {
-        double kaltea = (ekintza.getIndarra() * erasoa) / (double) etsaia.defentsa;
-        return Math.max(1, kaltea); // Gutxienez 1 kaltea
+        double kaltea = (ekintza.getIndarra() * erasoa)/etsaia.defentsa;
+        return kaltea; 
     }
 
     public void jasoErasoa(double kaltea) {
-        int kalteOsoa = (int) Math.round(kaltea);
-        bizitza = Math.max(0, bizitza - kalteOsoa);
-        System.out.println(izena + " eraso bat jaso du " + kalteOsoa + " kaltearekin. Bizitza: " + bizitza);
+        bizitza = bizitza - (int) kaltea;
+        System.out.println(izena + " eraso bat jaso du " + kaltea + " kaltearekin. Bizitza: " + bizitza);
     }
 
     public boolean bizirikDago() {
-        return bizitza > 0;
+        if (bizitza > 0) {
+        	return true;}
+        else {
+        	return false;}
     }
 
-    public List<Ekintza> getEkintzak() {
+    public ArrayList<Ekintza> getEkintzak() {
         return ekintzak;
     }
 
     public String getIzena() {
-        return izena;
+        return this.izena;
     }
 
     public int getBizitza() {
-        return bizitza;
+        return this.bizitza;
     }
 
     public int getErasoa() {
-        return erasoa;
+        return this.erasoa;
     }
 
     public int getDefentsa() {
-        return defentsa;
+        return this.defentsa;
     }
     
     // Ekintza klasea (barneko klasea)
@@ -67,22 +68,23 @@ public abstract class Pokemon {
         private int indarra;
         private String mota;
 
-        public Ekintza(String izena, int indarra, String mota) {
-            this.izena = izena;
-            this.indarra = indarra;
-            this.mota = mota;
+        public Ekintza(String pIzena, int pIndarra, String pMota) {
+            this.izena = pIzena;
+            this.indarra = pIndarra;
+            this.mota = pMota;
+
         }
 
         public String getIzena() {
-            return izena;
+            return this.izena;
         }
 
         public int getIndarra() {
-            return indarra;
+            return this.indarra;
         }
 
         public String getMota() {
-            return mota;
+            return this.mota;
         }
     }
 }
