@@ -1,5 +1,5 @@
 package proiektuPokemonAbiapuntu;
-import java.util.ArrayList;
+
 
 //Borroka klasea (Batalla - Borrokak kudeatzen ditu)
 public class Borroka {
@@ -81,19 +81,19 @@ public class Borroka {
  }
  
  private Ekintza aukeratuEkintza(Pokemon pokemon) {
-     ArrayList<Ekintza> ekintzak = pokemon.getEkintzak();
+     ListaEkintzak ekintzak = pokemon.getEkintzak();
      System.out.println("Aukeratu ekintza:");
      
-     for (int i = 0; i < ekintzak.size(); i++) {
-         Ekintza ekintza = ekintzak.get(i);
+     for (int i = 0; i < ekintzak.tamaina(); i++) {
+         Ekintza ekintza = ekintzak.getEkintza(i);
          System.out.println((i + 1) + ". " + ekintza.getIzena() + 
                             " [Indarra: " + ekintza.getIndarra() + ", Mota: " + ekintza.getMota() + "]");
      }
      
      // Usa la instancia de Teklatua para leer la opción seleccionada
      Teklatua teklatua = Teklatua.getTeklatua();
-     int aukera = teklatua.irakurriInt("Hautatu zenbakia (1-" + ekintzak.size() + "): ", 1, ekintzak.size());
+     int aukera = teklatua.irakurriInt("Hautatu zenbakia (1-" + ekintzak.tamaina() + "): ", 1, ekintzak.tamaina());
      
-     return ekintzak.get(aukera - 1);
+     return ekintzak.getEkintza(aukera - 1);
  }
 }

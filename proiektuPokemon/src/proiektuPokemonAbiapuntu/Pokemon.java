@@ -1,6 +1,4 @@
 package proiektuPokemonAbiapuntu;
-import java.util.ArrayList;
-import java.util.List;
 
 // Pokemon klase abstraktua
 public abstract class Pokemon {
@@ -8,14 +6,14 @@ public abstract class Pokemon {
     private int bizitza;
     private int erasoa;
     private int defentsa;
-    private ArrayList<Ekintza> ekintzak;
+    private ListaEkintzak ekintzak;
 
     public Pokemon(String pIzena, int pBizitza, int pErasoa, int pDefentsa) {
         this.izena = pIzena;
         this.bizitza = pBizitza;
         this.erasoa = pErasoa;
         this.defentsa = pDefentsa;
-        this.ekintzak = new ArrayList<Ekintza>();
+        this.ekintzak = new ListaEkintzak();
     }
 
     public abstract void setEkintzak();
@@ -56,7 +54,7 @@ public abstract class Pokemon {
         return bizitza > 0;
     }
 
-    protected ArrayList<Ekintza> getEkintzak() {
+    protected ListaEkintzak getEkintzak() {
         return ekintzak;
     }
 

@@ -1,7 +1,5 @@
 package proiektuPokemonAbiapuntu;
 
-import java.util.ArrayList;
-
 
 public class PokemonNormala extends Pokemon{
 	public PokemonNormala(String pIzena, int pBizitza,int pErasoa,int pDefentsa) {
@@ -14,11 +12,11 @@ public class PokemonNormala extends Pokemon{
 	@Override
 	
 	public void setEkintzak() {
-		ArrayList<Ekintza> ekintzak = getEkintzak();
-		ekintzak.add(new Ekintza("Gorputzada",30,"Normala"));
-		ekintzak.add(new Ekintza("Eraso-Bizkorra",40,"Normala"));
-		ekintzak.add(new Ekintza("Oldartu",20,"Normala"));
-		ekintzak.add(new Ekintza("Kolpe-Bikoitza",55,"Normala"));
+		ListaEkintzak ekintzak = getEkintzak();
+		ekintzak.gehituEkintza(new Ekintza("Gorputzada",30,"Normala"));
+		ekintzak.gehituEkintza(new Ekintza("Eraso-Bizkorra",40,"Normala"));
+		ekintzak.gehituEkintza(new Ekintza("Oldartu",20,"Normala"));
+		ekintzak.gehituEkintza(new Ekintza("Kolpe-Bikoitza",55,"Normala"));
 		
 	}
 

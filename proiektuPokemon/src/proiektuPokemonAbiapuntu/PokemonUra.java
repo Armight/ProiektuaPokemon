@@ -1,6 +1,5 @@
 package proiektuPokemonAbiapuntu;
 
-import java.util.ArrayList;
 
 
 public class PokemonUra extends Pokemon{
@@ -12,11 +11,11 @@ public class PokemonUra extends Pokemon{
 	@Override
 	
 	public void setEkintzak() {
-		ArrayList<Ekintza> ekintzak = getEkintzak();
-		ekintzak.add(new Ekintza("Surf",30,"Ura"));
-		ekintzak.add(new Ekintza("Aqua-Jet",40,"Ura"));
-		ekintzak.add(new Ekintza("Ur-pistola",20,"Ura"));
-		ekintzak.add(new Ekintza("Hidrobomba",50,"Ura"));
+		ListaEkintzak ekintzak = getEkintzak();
+		ekintzak.gehituEkintza(new Ekintza("Surf",30,"Ura"));
+		ekintzak.gehituEkintza(new Ekintza("Aqua-Jet",40,"Ura"));
+		ekintzak.gehituEkintza(new Ekintza("Ur-pistola",20,"Ura"));
+		ekintzak.gehituEkintza(new Ekintza("Hidrobomba",50,"Ura"));
 		
 	}
 	@Override

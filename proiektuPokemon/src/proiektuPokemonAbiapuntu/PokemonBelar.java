@@ -1,9 +1,5 @@
 package proiektuPokemonAbiapuntu;
 
-import java.util.ArrayList;
-
-
-
 public class PokemonBelar extends Pokemon{
 	public PokemonBelar(String pIzena, int pBizitza,int pErasoa,int pDefentsa) {
 		super(pIzena,pBizitza,pErasoa,pDefentsa);
@@ -14,11 +10,11 @@ public class PokemonBelar extends Pokemon{
 	@Override
 	
 	public void setEkintzak() {
-		ArrayList<Ekintza> ekintzak = getEkintzak();
-		ekintzak.add(new Ekintza("Hostokada",30,"Belar"));
-		ekintzak.add(new Ekintza("Loratze",25,"Belar"));
-		ekintzak.add(new Ekintza("Eguzki Izpia",50,"Belar"));
-		ekintzak.add(new Ekintza("Xurgapena",40,"Belar"));
+		ListaEkintzak ekintzak = getEkintzak();
+		ekintzak.gehituEkintza(new Ekintza("Hostokada",30,"Belar"));
+		ekintzak.gehituEkintza(new Ekintza("Loratze",25,"Belar"));
+		ekintzak.gehituEkintza(new Ekintza("Eguzki Izpia",50,"Belar"));
+		ekintzak.gehituEkintza(new Ekintza("Xurgapena",40,"Belar"));
 		
 	}
 	@Override
