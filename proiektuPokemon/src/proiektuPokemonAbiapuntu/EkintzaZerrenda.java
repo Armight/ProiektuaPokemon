@@ -2,33 +2,33 @@ package proiektuPokemonAbiapuntu;
 
 import java.util.ArrayList;
 
-public class ListaEkintzak {
+public class EkintzaZerrenda {
     private ArrayList<Ekintza> ekintzak;
 
-    // Constructor
-    public ListaEkintzak() {
+    // Eraikitzailea
+    public EkintzaZerrenda() {
         this.ekintzak = new ArrayList<>();
     }
 
-    // Método para agregar una Ekintza a la lista
+    // Ekintzak gehitzeko metodoa
     public void gehituEkintza(Ekintza ekintza) {
         ekintzak.add(ekintza);
     }
 
     // Método para obtener una Ekintza por su índice
-    public Ekintza getEkintza(int index) {
-        if (index >= 0 && index < ekintzak.size()) {
-            return ekintzak.get(index);
+    public Ekintza getEkintza(int zenbakia) {
+        if (zenbakia >= 0 && zenbakia < ekintzak.size()) {
+            return ekintzak.get(zenbakia);
         }
         return null; // Retorna null si el índice es inválido
     }
-
-    // Método para obtener todas las Ekintzak
+    
+    // Ekintzen gettera
     public ArrayList<Ekintza> getEkintzak() {
         return ekintzak;
     }
 
-    // Método para obtener el tamaño de la lista
+    // Listaren tamaina lortzeko (1 eta 4 artean da)
     public int tamaina() {
         return ekintzak.size();
     }

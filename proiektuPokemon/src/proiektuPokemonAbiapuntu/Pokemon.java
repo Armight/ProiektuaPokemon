@@ -6,14 +6,14 @@ public abstract class Pokemon {
     private int bizitza;
     private int erasoa;
     private int defentsa;
-    private ListaEkintzak ekintzak;
+    private EkintzaZerrenda ekintzak;
 
     public Pokemon(String pIzena, int pBizitza, int pErasoa, int pDefentsa) {
         this.izena = pIzena;
         this.bizitza = pBizitza;
         this.erasoa = pErasoa;
         this.defentsa = pDefentsa;
-        this.ekintzak = new ListaEkintzak();
+        this.ekintzak = new EkintzaZerrenda();
     }
 
     public abstract void setEkintzak();
@@ -54,7 +54,7 @@ public abstract class Pokemon {
         return bizitza > 0;
     }
 
-    protected ListaEkintzak getEkintzak() {
+    protected EkintzaZerrenda getEkintzak() {
         return ekintzak;
     }
 

@@ -11,7 +11,7 @@ public class PokemonSua extends Pokemon{
 	@Override
 	
 	public void setEkintzak() {
-		ListaEkintzak ekintzak = getEkintzak();
+		EkintzaZerrenda ekintzak = getEkintzak();
 		ekintzak.gehituEkintza(new Ekintza("Sugarrada",50,"Sua"));
 		ekintzak.gehituEkintza(new Ekintza("Su-ukabilkada",25,"Sua"));
 		ekintzak.gehituEkintza(new Ekintza("Bero-kolpea",30,"Sua"));

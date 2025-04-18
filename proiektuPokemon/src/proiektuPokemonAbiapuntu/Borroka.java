@@ -81,7 +81,7 @@ public class Borroka {
  }
  
  private Ekintza aukeratuEkintza(Pokemon pokemon) {
-     ListaEkintzak ekintzak = pokemon.getEkintzak();
+     EkintzaZerrenda ekintzak = pokemon.getEkintzak();
      System.out.println("Aukeratu ekintza:");
      
      for (int i = 0; i < ekintzak.tamaina(); i++) {

@@ -12,7 +12,7 @@ public class PokemonNormala extends Pokemon{
 	@Override
 	
 	public void setEkintzak() {
-		ListaEkintzak ekintzak = getEkintzak();
+		EkintzaZerrenda ekintzak = getEkintzak();
 		ekintzak.gehituEkintza(new Ekintza("Gorputzada",30,"Normala"));
 		ekintzak.gehituEkintza(new Ekintza("Eraso-Bizkorra",40,"Normala"));
 		ekintzak.gehituEkintza(new Ekintza("Oldartu",20,"Normala"));

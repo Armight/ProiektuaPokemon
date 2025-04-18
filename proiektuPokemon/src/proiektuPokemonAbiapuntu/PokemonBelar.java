@@ -10,7 +10,7 @@ public class PokemonBelar extends Pokemon{
 	@Override
 	
 	public void setEkintzak() {
-		ListaEkintzak ekintzak = getEkintzak();
+		EkintzaZerrenda ekintzak = getEkintzak();
 		ekintzak.gehituEkintza(new Ekintza("Hostokada",30,"Belar"));
 		ekintzak.gehituEkintza(new Ekintza("Loratze",25,"Belar"));
 		ekintzak.gehituEkintza(new Ekintza("Eguzki Izpia",50,"Belar"));

@@ -11,7 +11,7 @@ public class PokemonUra extends Pokemon{
 	@Override
 	
 	public void setEkintzak() {
-		ListaEkintzak ekintzak = getEkintzak();
+		EkintzaZerrenda ekintzak = getEkintzak();
 		ekintzak.gehituEkintza(new Ekintza("Surf",30,"Ura"));
 		ekintzak.gehituEkintza(new Ekintza("Aqua-Jet",40,"Ura"));
 		ekintzak.gehituEkintza(new Ekintza("Ur-pistola",20,"Ura"));
