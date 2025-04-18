@@ -20,7 +20,7 @@ public class EkintzaZerrenda {
         if (zenbakia >= 0 && zenbakia < ekintzak.size()) {
             return ekintzak.get(zenbakia);
         }
-        return null; // Retorna null si el índice es inválido
+        return null; // Null bueltatu ez bada onargarria zenbakia
     }
     
     // Ekintzen getter normala
