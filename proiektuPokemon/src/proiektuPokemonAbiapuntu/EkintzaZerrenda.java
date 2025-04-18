@@ -15,7 +15,7 @@ public class EkintzaZerrenda {
         ekintzak.add(ekintza);
     }
 
-    // Método para obtener una Ekintza por su índice
+    // Ekintza gettera baina zenbakiarekin
     public Ekintza getEkintza(int zenbakia) {
         if (zenbakia >= 0 && zenbakia < ekintzak.size()) {
             return ekintzak.get(zenbakia);
@@ -23,7 +23,7 @@ public class EkintzaZerrenda {
         return null; // Retorna null si el índice es inválido
     }
     
-    // Ekintzen gettera
+    // Ekintzen getter normala
     public ArrayList<Ekintza> getEkintzak() {
         return ekintzak;
     }
