@@ -1,0 +1,58 @@
+package proiektofinal;
+
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class BorrokaTest {
+
+    private Pokemon erasotzailea;
+    private Pokemon defendatzailea;
+    private Jokalaria j1, j2;
+
+    @Before
+    public void setUp() {
+        // Preparar prueba de ekintza/erasotu
+        erasotzailea = new PokemonNormala("Erasotzaile", 100, 60, 40);
+        defendatzailea = new PokemonNormala("Erasotua", 100, 50, 30);
+
+        erasotzailea.getEkintzak().clear();
+        Pokemon.Ekintza ekintza = new Pokemon.Ekintza("Gorputzada", 30, "Normala");
+        erasotzailea.getEkintzak().add(ekintza);
+
+        // Preparar prueba de partidaBatJolastu
+        j1 = new Jokalaria("Ash");
+        j1.gehituPokemon(new PokemonNormala("Pika", 100, 60, 50));
+
+        j2 = new Jokalaria("Misty");
+        j2.gehituPokemon(new PokemonSua("Charmander", 100, 60, 50));
+    }
+
+    @Test
+    public void testEginTxandaKalteEgiaztatzea() {
+        int bizitzaHasierakoa = defendatzailea.getBizitza();
+        Pokemon.Ekintza aukeratutakoEkintza = erasotzailea.getEkintzak().get(0);
+        erasotzailea.erasotu(defendatzailea, aukeratutakoEkintza);
+        int bizitzaOndoren = defendatzailea.getBizitza();
+
+        assertTrue(bizitzaOndoren < bizitzaHasierakoa,
+                "Defentsaren bizitza ez da jaitsi: " + bizitzaHasierakoa + " -> " + bizitzaOndoren);
+    }
+
+    @Test
+    public void testPartidaBatJolastu_hasieraOndo() {
+        Borroka borroka = new Borroka(j1, j2);
+        borroka.partidaBatJolastu();
+
+        assertTrue(borroka.getOutput().contains("=== BORROKA HASIERA ==="));
+        assertTrue(borroka.getOutput().contains("Ash VS Misty"));
+    }
+
+    @Test
+    public void testAukeratuEkintzaItzultzenDuEkintzaBalioduna() {
+        Pokemon.Ekintza ekintzaHautatua = erasotzailea.aukeratuEkintza();
+        assertNotNull(ekintzaHautatua, "aukeratuEkintza() ez da ekintza bat itzuli");
+        assertTrue(erasotzailea.getEkintzak().contains(ekintzaHautatua),
+                "aukeratuEkintza() ez du itzuli ekintza baliodun bat");
+    }
+}
